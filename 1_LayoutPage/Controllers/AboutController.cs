@@ -7,6 +7,7 @@ namespace _1_LayoutPage.Controllers
 		public IActionResult Index()
 		{
 			return View();
+
 		}
 
 
