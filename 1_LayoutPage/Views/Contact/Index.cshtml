@@ -1,0 +1,32 @@
+﻿@*@model _1_LayoutPage.Models.ContactModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers*@
+@model ContactModel
+
+@{
+	ViewData["Title"] = "Index";
+	//Layout = "~/Views/Shared/_Sablon.cshtml";
+}
+
+<h1>Index</h1>
+
+<form asp-action="Index">
+	<input asp-for="Email" placeholder="EMail Adresiniz" />
+	<span asp-validation-for="Email"></span>
+	<br />
+	<textarea asp-for="Message" placeholder="Mesajınızı bu bölüme yazınız"></textarea>
+	<span asp-validation-for="Message"></span>
+	<br />
+	<input type="submit" value="Gönder" />
+</form>
+
+
+
+
+<!--
+	ValidationScript => renderbody'de depil layut'ın istenilen bölgesinde render edilir...
+-->
+@section ValidationScript{
+	<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+	}
+

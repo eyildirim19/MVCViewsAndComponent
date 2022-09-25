@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+
+	<style>
+		header{
+			height:70px;
+			background-color:black;
+		}
+		.container{
+			width:900px;
+			margin:0 auto;
+		}
+		input{
+			border:none;
+			background-color:white;
+			border-radius:10px;
+			margin:20px auto;
+		}
+
+		#sol{
+			width:200px;
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<input type="text" placeholder="arama yapın" />
+		</div>
+	</header>
+	<a asp-action="Index" asp-controller="Home">Anasayfa</a>
+	<a asp-action="Index" asp-controller="About">Hakkımızda</a>
+	<a asp-action="Index" asp-controller="Contact">Iletişim</a>
+
+	@*@RenderBody() => bu view'I layout olark kullanan viewları bu bölümde render et...*@
+
+
+
+
+	@RenderBody()
+
+
+	<!--eğer section tanımlıysa sectionı render et...-->
+	@if (IsSectionDefined("MySection"))
+	{
+		@RenderSection("MySection")
+	}
+
+
+
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+
+	@if (IsSectionDefined("ValidationScript"))
+	{
+		@RenderSection("ValidationScript")
+	}
+
+
+	@*
+		BU scriptler sadece Contact sayfasında olması gerekir. çünkü validasyon sadece o sayfada yapılacaktır...	
+	<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+	
+	*@
+		
+
+
+
+
+</body>
+</html>
