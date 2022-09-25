@@ -1,0 +1,22 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<!--
+	Partial => proje içeiisnde tekrar eden modüllerin (html veya c#) tekrarından kaçınmak için modülün ayrı biryerde yazılıp proje içerisinde istenilen bölge çağırmak ve çalıştırmak için kullanılır...
+-->
+
+<!--partial'ı çapırıyoruz..-->
+<!--html helper ile çağırıyoruz....-->
+@Html.Partial("_box")
+
+<br />
+
+<!--tag helper ile çağıroyurz...-->
+<partial name="_box" />
